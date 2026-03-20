@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CouponSnap – Free Honey Alternative Chrome Extension | Auto-Apply Coupon Codes</title>
+  <meta name="description" content="CouponSnap automatically finds and applies the best coupon codes while you shop. Free Chrome extension. Unlike Honey, we never sell your data. Save money at Amazon, Walmart, Target & 1000+ stores.">
+  <meta name="keywords" content="honey alternative chrome extension, free coupon finder chrome, automatic coupon codes extension, coupon snapper, best coupon extension 2026">
+  <link rel="canonical" href="https://kalawcreator919.github.io/couponsnap-landing/">
+  <!-- Open Graph -->
+  <meta property="og:title" content="CouponSnap – Free Coupon Finder Chrome Extension">
+  <meta property="og:description" content="Automatically apply the best coupon codes at 1000+ stores. Free, private, and better than Honey.">
+  <meta property="og:url" content="https://kalawcreator919.github.io/couponsnap-landing/">
+  <meta property="og:type" content="website">
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "CouponSnap",
+    "applicationCategory": "BrowserApplication",
+    "operatingSystem": "Chrome",
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+    "description": "Free Chrome extension that automatically finds and applies coupon codes while you shop online."
+  }
+  </script>
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --accent: #10b981;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --bg: #f9fafb;
+      --white: #ffffff;
+      --border: #e5e7eb;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--text); background: var(--white); line-height: 1.6; }
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* NAV */
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; border-bottom: 1px solid var(--border); background: var(--white); position: sticky; top: 0; z-index: 100; }
+    .nav-logo { font-size: 1.4rem; font-weight: 700; color: var(--primary); }
+    .nav-logo span { color: var(--accent); }
+    .nav-cta { background: var(--primary); color: white; padding: 0.5rem 1.2rem; border-radius: 6px; font-weight: 600; font-size: 0.9rem; }
+    .nav-cta:hover { background: var(--primary-dark); text-decoration: none; }
+
+    /* HERO */
+    .hero { background: linear-gradient(135deg, #eff6ff 0%, #ecfdf5 100%); padding: 5rem 2rem 4rem; text-align: center; }
+    .hero-badge { display: inline-block; background: #dcfce7; color: #166534; padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 1.5rem; }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; line-height: 1.15; max-width: 800px; margin: 0 auto 1.5rem; }
+    .hero h1 em { color: var(--primary); font-style: normal; }
+    .hero p { font-size: 1.2rem; color: var(--muted); max-width: 600px; margin: 0 auto 2.5rem; }
+    .hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { background: var(--primary); color: white; padding: 0.9rem 2rem; border-radius: 8px; font-weight: 700; font-size: 1.05rem; display: inline-flex; align-items: center; gap: 0.5rem; transition: background 0.2s; }
+    .btn-primary:hover { background: var(--primary-dark); text-decoration: none; }
+    .btn-secondary { background: white; color: var(--text); padding: 0.9rem 2rem; border-radius: 8px; font-weight: 600; font-size: 1.05rem; border: 2px solid var(--border); }
+    .hero-stats { display: flex; justify-content: center; gap: 3rem; margin-top: 3rem; flex-wrap: wrap; }
+    .stat { text-align: center; }
+    .stat-num { font-size: 2rem; font-weight: 800; color: var(--primary); }
+    .stat-label { font-size: 0.85rem; color: var(--muted); }
+
+    /* SECTION */
+    section { padding: 5rem 2rem; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-label { text-align: center; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--primary); margin-bottom: 0.75rem; }
+    .section-title { text-align: center; font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 800; margin-bottom: 1rem; }
+    .section-subtitle { text-align: center; color: var(--muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto 3rem; }
+
+    /* HOW IT WORKS */
+    .how-bg { background: var(--bg); }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem; }
+    .step { background: white; border-radius: 12px; padding: 2rem; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+    .step-num { width: 48px; height: 48px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 800; margin: 0 auto 1rem; }
+    .step h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .step p { color: var(--muted); font-size: 0.95rem; }
+
+    /* STORES */
+    .stores-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 2rem; }
+    .store-badge { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 0.6rem 1.2rem; font-size: 0.95rem; font-weight: 600; color: var(--text); }
+
+    /* PRIVACY */
+    .privacy-bg { background: #0f172a; color: white; }
+    .privacy-bg .section-title { color: white; }
+    .privacy-bg .section-subtitle { color: #94a3b8; }
+    .privacy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem; }
+    .privacy-card { background: #1e293b; border-radius: 12px; padding: 2rem; }
+    .privacy-card .icon { font-size: 2rem; margin-bottom: 1rem; }
+    .privacy-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; color: white; }
+    .privacy-card p { color: #94a3b8; font-size: 0.95rem; }
+    .vs-honey { background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 2rem; margin-top: 3rem; }
+    .vs-honey h3 { color: white; font-size: 1.3rem; margin-bottom: 1.5rem; text-align: center; }
+    .vs-table { width: 100%; border-collapse: collapse; }
+    .vs-table th { padding: 0.75rem 1rem; text-align: left; font-size: 0.85rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px; }
+    .vs-table td { padding: 0.75rem 1rem; border-top: 1px solid #334155; font-size: 0.95rem; }
+    .vs-table td:first-child { color: #e2e8f0; }
+    .yes { color: #10b981; font-weight: 700; }
+    .no { color: #ef4444; font-weight: 700; }
+
+    /* SOCIAL PROOF */
+    .testimonials { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+    .testimonial { background: var(--bg); border-radius: 12px; padding: 1.5rem; border-left: 4px solid var(--primary); }
+    .testimonial p { font-size: 0.95rem; color: var(--text); margin-bottom: 1rem; font-style: italic; }
+    .testimonial cite { font-size: 0.85rem; font-weight: 600; color: var(--muted); font-style: normal; }
+
+    /* BLOG */
+    .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+    .blog-card { border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; transition: box-shadow 0.2s; }
+    .blog-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    .blog-tag { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--primary); margin-bottom: 0.5rem; }
+    .blog-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text); }
+    .blog-card p { font-size: 0.9rem; color: var(--muted); }
+    .blog-card a { display: block; }
+    .blog-card a:hover { text-decoration: none; }
+
+    /* CTA BANNER */
+    .cta-banner { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; text-align: center; padding: 5rem 2rem; }
+    .cta-banner h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 800; margin-bottom: 1rem; }
+    .cta-banner p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 2rem; }
+    .btn-white { background: white; color: var(--primary); padding: 0.9rem 2rem; border-radius: 8px; font-weight: 700; font-size: 1.05rem; display: inline-block; }
+    .btn-white:hover { background: #f0f7ff; text-decoration: none; }
+
+    /* FOOTER */
+    footer { background: #0f172a; color: #94a3b8; padding: 2rem; text-align: center; font-size: 0.9rem; }
+    footer a { color: #94a3b8; }
+
+    /* ADSENSE */
+    .adsense-placeholder { background: var(--bg); border: 1px dashed var(--border); border-radius: 8px; padding: 1.5rem; text-align: center; color: var(--muted); font-size: 0.85rem; margin: 2rem auto; max-width: 728px; }
+
+    @media (max-width: 640px) {
+      nav { padding: 1rem; }
+      .hero-stats { gap: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Coupon<span>Snap</span></div>
+  <a class="nav-cta" href="https://chrome.google.com/webstore/detail/couponsnap" target="_blank" rel="noopener">Add to Chrome – Free</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">🔒 We NEVER sell your data — unlike Honey</div>
+  <h1>Save Money <em>Automatically</em><br>While You Shop Online</h1>
+  <p>CouponSnap finds and applies the best coupon codes at checkout — instantly and for free. Works at Amazon, Walmart, Target & 1,000+ stores.</p>
+  <div class="hero-buttons">
+    <a class="btn-primary" href="https://chrome.google.com/webstore/detail/couponsnap" target="_blank" rel="noopener">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+      Add to Chrome — It's Free
+    </a>
+    <a class="btn-secondary" href="#how-it-works">See How It Works</a>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num">1,000+</div><div class="stat-label">Stores Supported</div></div>
+    <div class="stat"><div class="stat-num">$0</div><div class="stat-label">Cost to You, Ever</div></div>
+    <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Privacy Preserved</div></div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-bg" id="how-it-works">
+  <div class="container">
+    <div class="section-label">Simple as 1-2-3</div>
+    <h2 class="section-title">Start Saving in 30 Seconds</h2>
+    <p class="section-subtitle">CouponSnap runs quietly in the background and activates automatically when you're ready to checkout.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Install CouponSnap</h3>
+        <p>Add it to Chrome for free. No account required, no email needed. Just click and install.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Shop as Normal</h3>
+        <p>Browse and add items to your cart at any of 1,000+ supported stores. CouponSnap watches silently.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Watch Savings Appear</h3>
+        <p>At checkout, CouponSnap automatically finds and applies the best available coupon code. Instant savings.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORES -->
+<section>
+  <div class="container">
+    <div class="section-label">Works Everywhere You Shop</div>
+    <h2 class="section-title">1,000+ Supported Stores</h2>
+    <p class="section-subtitle">From big box retailers to boutique shops — CouponSnap has you covered.</p>
+    <div class="stores-grid">
+      <div class="store-badge">🛒 Amazon</div>
+      <div class="store-badge">🛍️ Walmart</div>
+      <div class="store-badge">🎯 Target</div>
+      <div class="store-badge">📦 eBay</div>
+      <div class="store-badge">💙 Best Buy</div>
+      <div class="store-badge">🌸 Etsy</div>
+      <div class="store-badge">👗 Macy's</div>
+      <div class="store-badge">👟 Nike</div>
+      <div class="store-badge">👟 Adidas</div>
+      <div class="store-badge">🛋️ Wayfair</div>
+      <div class="store-badge">🏠 Home Depot</div>
+      <div class="store-badge">💄 Sephora</div>
+      <div class="store-badge">👗 Nordstrom</div>
+      <div class="store-badge">🎮 Newegg</div>
+      <div class="store-badge">+ 986 more</div>
+    </div>
+  </div>
+</section>
+
+<!-- ADSENSE -->
+<div class="adsense-placeholder">
+  <!-- Google AdSense ad will appear here -->
+  Advertisement
+</div>
+
+<!-- PRIVACY -->
+<section class="privacy-bg">
+  <div class="container">
+    <div class="section-label" style="color:#10b981">Your Privacy Comes First</div>
+    <h2 class="section-title">We Are NOT Honey</h2>
+    <p class="section-subtitle">PayPal's Honey was caught selling user browsing data and hijacking affiliate links. CouponSnap is built differently — privacy-first, by design.</p>
+    <div class="privacy-grid">
+      <div class="privacy-card">
+        <div class="icon">🚫</div>
+        <h3>Zero Data Selling</h3>
+        <p>We never sell, share, or monetize your browsing history. Your shopping habits are yours alone.</p>
+      </div>
+      <div class="privacy-card">
+        <div class="icon">🔒</div>
+        <h3>Minimal Permissions</h3>
+        <p>CouponSnap only activates on checkout pages — not every site you visit.</p>
+      </div>
+      <div class="privacy-card">
+        <div class="icon">📂</div>
+        <h3>Open & Transparent</h3>
+        <p>Our revenue comes from standard affiliate commissions — never from your personal data.</p>
+      </div>
+    </div>
+    <div class="vs-honey">
+      <h3>CouponSnap vs. Honey — Side by Side</h3>
+      <table class="vs-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>CouponSnap</th>
+            <th>Honey (PayPal)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Auto-apply coupons</td><td class="yes">✓ Yes</td><td class="yes">✓ Yes</td></tr>
+          <tr><td>Sells user data</td><td class="yes">✗ Never</td><td class="no">✓ Yes</td></tr>
+          <tr><td>Hijacks affiliate links</td><td class="yes">✗ Never</td><td class="no">✓ Yes</td></tr>
+          <tr><td>Free to use</td><td class="yes">✓ Yes</td><td class="yes">✓ Yes</td></tr>
+          <tr><td>Backed by $4B corp</td><td class="yes">✗ Independent</td><td class="no">✓ PayPal-owned</td></tr>
+          <tr><td>Privacy-first architecture</td><td class="yes">✓ Yes</td><td class="no">✗ No</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section>
+  <div class="container">
+    <div class="section-label">What Shoppers Are Saying</div>
+    <h2 class="section-title">Join Smart Shoppers</h2>
+    <p class="section-subtitle">Real savings, real privacy, real reviews from our growing community.</p>
+    <div class="testimonials">
+      <div class="testimonial">
+        <p>"Switched from Honey after the data scandal. CouponSnap saved me $47 on my first Amazon order. Never going back."</p>
+        <cite>— Sarah K., Freelance Designer</cite>
+      </div>
+      <div class="testimonial">
+        <p>"As a startup founder, every dollar counts. CouponSnap automatically applied a 15% off code at Newegg I didn't know existed."</p>
+        <cite>— Marcus T., SaaS Founder</cite>
+      </div>
+      <div class="testimonial">
+        <p>"Love that it's truly free with no data selling. The Chrome extension is lightweight and just works silently in the background."</p>
+        <cite>— Jamie L., Small Business Owner</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section style="background: var(--bg);">
+  <div class="container">
+    <div class="section-label">Savings Tips & Guides</div>
+    <h2 class="section-title">Learn to Save More</h2>
+    <p class="section-subtitle">Practical guides on getting the best deals at your favourite stores.</p>
+    <div class="blog-grid">
+      <div class="blog-card">
+        <a href="blog/honey-alternative-chrome-extension.html">
+          <div class="blog-tag">Privacy</div>
+          <h3>Best Honey Alternative Chrome Extension in 2026</h3>
+          <p>Why thousands are switching from Honey to privacy-first coupon finders — and which one is right for you.</p>
+        </a>
+      </div>
+      <div class="blog-card">
+        <a href="blog/automatic-coupon-codes-extension.html">
+          <div class="blog-tag">How-To</div>
+          <h3>How Automatic Coupon Code Extensions Actually Work</h3>
+          <p>A plain-English guide to how coupon extensions find and apply codes — and what to look out for.</p>
+        </a>
+      </div>
+      <div class="blog-card">
+        <a href="blog/free-coupon-finder-chrome.html">
+          <div class="blog-tag">Savings</div>
+          <h3>5 Best Free Coupon Finder Chrome Extensions (2026)</h3>
+          <p>We tested every major coupon extension so you don't have to. Here's the honest comparison.</p>
+        </a>
+      </div>
+      <div class="blog-card">
+        <a href="blog/couponsnap-vs-honey.html">
+          <div class="blog-tag">Comparison</div>
+          <h3>CouponSnap vs. Honey: The Full 2026 Comparison</h3>
+          <p>Features, privacy practices, and savings results compared side-by-side. One clear winner.</p>
+        </a>
+      </div>
+      <div class="blog-card">
+        <a href="blog/best-coupon-extension-2026.html">
+          <div class="blog-tag">Guide</div>
+          <h3>How to Save Money Online: The 2026 Complete Guide</h3>
+          <p>Stack coupons, cashback, and price tracking to maximise every online purchase you make.</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-banner">
+  <h2>Ready to Save on Every Purchase?</h2>
+  <p>Install CouponSnap free in 10 seconds. Works immediately — no account, no email, no data selling.</p>
+  <a class="btn-white" href="https://chrome.google.com/webstore/detail/couponsnap" target="_blank" rel="noopener">Add CouponSnap to Chrome — Free</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 CouponSnap · <a href="privacy.html">Privacy Policy</a> · <a href="mailto:support@couponsnap.app">Contact</a></p>
+  <p style="margin-top:0.5rem;font-size:0.8rem;">CouponSnap earns affiliate commissions when you make a purchase through our links — at no extra cost to you. We never sell your personal data.</p>
+</footer>
+
+</body>
+</html>

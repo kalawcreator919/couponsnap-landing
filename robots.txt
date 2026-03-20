@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kalawcreator919.github.io/couponsnap-landing/sitemap.xml
