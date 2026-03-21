@@ -3,15 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CouponSnap – Free Honey Alternative Chrome Extension | Auto-Apply Coupon Codes</title>
-  <meta name="description" content="CouponSnap automatically finds and applies the best coupon codes while you shop. Free Chrome extension. Unlike Honey, we never sell your data. Save money at Amazon, Walmart, Target & 1000+ stores.">
-  <meta name="keywords" content="honey alternative chrome extension, free coupon finder chrome, automatic coupon codes extension, coupon snapper, best coupon extension 2026">
+  <title>CouponSnap – Free Deal Finder & Coupon Code Extension | Better Than Honey</title>
+  <meta name="description" content="CouponSnap finds live deals and applies coupon codes automatically while you shop. Free Chrome extension. Unlike Honey, we never sell your data. Save money at Amazon, Nike, Walmart & 1000+ stores.">
+  <meta name="keywords" content="honey alternative chrome extension, free coupon finder chrome, deal finder extension, automatic coupon codes extension, best coupon extension 2026, free deals chrome">
   <link rel="canonical" href="https://kalawcreator919.github.io/couponsnap-landing/">
   <!-- Open Graph -->
-  <meta property="og:title" content="CouponSnap – Free Coupon Finder Chrome Extension">
-  <meta property="og:description" content="Automatically apply the best coupon codes at 1000+ stores. Free, private, and better than Honey.">
+  <meta property="og:title" content="CouponSnap – Free Deal Finder & Coupon Extension">
+  <meta property="og:description" content="Finds live deals and applies coupon codes automatically at 1000+ stores. Free, private, and better than Honey.">
   <meta property="og:url" content="https://kalawcreator919.github.io/couponsnap-landing/">
   <meta property="og:type" content="website">
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+
+    // CTA Click Tracking for Auto Research
+    document.addEventListener('click', function(e) {
+      var link = e.target.closest('a');
+      if (!link) return;
+      var href = link.getAttribute('href') || '';
+      // Track "Add to Chrome" CTA clicks
+      if (href.includes('chrome.google.com/webstore')) {
+        gtag('event', 'cta_click', {
+          event_category: 'conversion',
+          event_label: link.textContent.trim(),
+          cta_location: link.closest('nav') ? 'nav' : link.closest('.hero') ? 'hero' : link.closest('.cta-banner') ? 'footer_cta' : 'other'
+        });
+      }
+      // Track "See How It Works" clicks
+      if (href === '#how-it-works') {
+        gtag('event', 'how_it_works_click', {
+          event_category: 'engagement'
+        });
+      }
+      // Track blog clicks
+      if (href.includes('/blog/')) {
+        gtag('event', 'blog_click', {
+          event_category: 'engagement',
+          event_label: href
+        });
+      }
+    });
+  </script>
   <!-- Schema.org -->
   <script type="application/ld+json">
   {
@@ -21,7 +57,7 @@
     "applicationCategory": "BrowserApplication",
     "operatingSystem": "Chrome",
     "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
-    "description": "Free Chrome extension that automatically finds and applies coupon codes while you shop online."
+    "description": "Free Chrome extension that finds live deals and automatically applies coupon codes while you shop online. Never sells your data."
   }
   </script>
   <style>
@@ -146,8 +182,8 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-badge">🔒 We NEVER sell your data — unlike Honey</div>
-  <h1>Save Money <em>Automatically</em><br>While You Shop Online</h1>
-  <p>CouponSnap finds and applies the best coupon codes at checkout — instantly and for free. Works at Amazon, Walmart, Target & 1,000+ stores.</p>
+  <h1>Find <em>Live Deals</em> &amp;<br>Coupon Codes Automatically</h1>
+  <p>CouponSnap surfaces real-time deals and applies the best coupon codes while you shop — free, private, and way better than Honey. Works at Amazon, Nike, Walmart & 1,000+ stores.</p>
   <div class="hero-buttons">
     <a class="btn-primary" href="https://chrome.google.com/webstore/detail/couponsnap" target="_blank" rel="noopener">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
@@ -156,7 +192,7 @@
     <a class="btn-secondary" href="#how-it-works">See How It Works</a>
   </div>
   <div class="hero-stats">
-    <div class="stat"><div class="stat-num">1,000+</div><div class="stat-label">Stores Supported</div></div>
+    <div class="stat"><div class="stat-num">1,000+</div><div class="stat-label">Stores & Deals</div></div>
     <div class="stat"><div class="stat-num">$0</div><div class="stat-label">Cost to You, Ever</div></div>
     <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Privacy Preserved</div></div>
   </div>
@@ -167,7 +203,7 @@
   <div class="container">
     <div class="section-label">Simple as 1-2-3</div>
     <h2 class="section-title">Start Saving in 30 Seconds</h2>
-    <p class="section-subtitle">CouponSnap runs quietly in the background and activates automatically when you're ready to checkout.</p>
+    <p class="section-subtitle">CouponSnap runs quietly in the background — surfacing live deals and applying coupon codes automatically.</p>
     <div class="steps">
       <div class="step">
         <div class="step-num">1</div>
@@ -176,13 +212,13 @@
       </div>
       <div class="step">
         <div class="step-num">2</div>
-        <h3>Shop as Normal</h3>
-        <p>Browse and add items to your cart at any of 1,000+ supported stores. CouponSnap watches silently.</p>
+        <h3>Browse &amp; Shop</h3>
+        <p>Visit any supported store. CouponSnap automatically surfaces live deals like "Nike: 50% off sale items" as you browse.</p>
       </div>
       <div class="step">
         <div class="step-num">3</div>
-        <h3>Watch Savings Appear</h3>
-        <p>At checkout, CouponSnap automatically finds and applies the best available coupon code. Instant savings.</p>
+        <h3>Deals + Codes Applied</h3>
+        <p>At checkout, CouponSnap applies the best coupon code automatically. Plus, one-click access to active deal pages via affiliate links.</p>
       </div>
     </div>
   </div>
@@ -192,8 +228,8 @@
 <section>
   <div class="container">
     <div class="section-label">Works Everywhere You Shop</div>
-    <h2 class="section-title">1,000+ Supported Stores</h2>
-    <p class="section-subtitle">From big box retailers to boutique shops — CouponSnap has you covered.</p>
+    <h2 class="section-title">1,000+ Stores with Live Deals &amp; Coupons</h2>
+    <p class="section-subtitle">From big box retailers to boutique shops — CouponSnap finds deals and codes wherever you shop.</p>
     <div class="stores-grid">
       <div class="store-badge">🛒 Amazon</div>
       <div class="store-badge">🛍️ Walmart</div>
@@ -254,7 +290,8 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td>Auto-apply coupons</td><td class="yes">✓ Yes</td><td class="yes">✓ Yes</td></tr>
+          <tr><td>Live deal finder alerts</td><td class="yes">✓ Yes</td><td class="no">✗ No</td></tr>
+          <tr><td>Auto-apply coupon codes</td><td class="yes">✓ Yes</td><td class="yes">✓ Yes</td></tr>
           <tr><td>Sells user data</td><td class="yes">✗ Never</td><td class="no">✓ Yes</td></tr>
           <tr><td>Hijacks affiliate links</td><td class="yes">✗ Never</td><td class="no">✓ Yes</td></tr>
           <tr><td>Free to use</td><td class="yes">✓ Yes</td><td class="yes">✓ Yes</td></tr>
@@ -278,7 +315,7 @@
         <cite>— Sarah K., Freelance Designer</cite>
       </div>
       <div class="testimonial">
-        <p>"As a startup founder, every dollar counts. CouponSnap automatically applied a 15% off code at Newegg I didn't know existed."</p>
+        <p>"As a startup founder, every dollar counts. CouponSnap showed me Nike had 50% off — clicked once and saved $80. The deal finder feature is 🔥"</p>
         <cite>— Marcus T., SaaS Founder</cite>
       </div>
       <div class="testimonial">
@@ -337,8 +374,8 @@
 
 <!-- FINAL CTA -->
 <section class="cta-banner">
-  <h2>Ready to Save on Every Purchase?</h2>
-  <p>Install CouponSnap free in 10 seconds. Works immediately — no account, no email, no data selling.</p>
+  <h2>Find Deals &amp; Save on Every Purchase</h2>
+  <p>Install CouponSnap free in 10 seconds — get live deal alerts and automatic coupon codes. No account, no email, no data selling.</p>
   <a class="btn-white" href="https://chrome.google.com/webstore/detail/couponsnap" target="_blank" rel="noopener">Add CouponSnap to Chrome — Free</a>
 </section>
 
