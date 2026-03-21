@@ -180,6 +180,22 @@
     .beta-feedback { margin-top: 1rem; font-size: 0.85rem; color: #92400e; }
     .beta-feedback a { color: #92400e; font-weight: 600; text-decoration: underline; }
 
+    /* WAITLIST */
+    .waitlist-section { background: linear-gradient(135deg, #eff6ff 0%, #f0fdf4 100%); padding: 4.5rem 2rem; text-align: center; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .waitlist-inner { max-width: 600px; margin: 0 auto; }
+    .waitlist-count { display: inline-flex; align-items: center; gap: 0.5rem; background: #dcfce7; color: #166534; padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 1.25rem; }
+    .waitlist-form-row { display: flex; gap: 0.6rem; max-width: 480px; margin: 0 auto 0.75rem; flex-wrap: wrap; justify-content: center; }
+    .waitlist-input { flex: 1; min-width: 200px; padding: 0.85rem 1rem; border: 2px solid var(--border); border-radius: 8px; font-size: 1rem; font-family: inherit; outline: none; transition: border-color 0.2s; background: white; }
+    .waitlist-input:focus { border-color: var(--primary); }
+    .waitlist-input.error { border-color: #ef4444; }
+    .waitlist-btn { background: var(--primary); color: white; padding: 0.85rem 1.5rem; border: none; border-radius: 8px; font-weight: 700; font-size: 1rem; cursor: pointer; transition: background 0.2s; white-space: nowrap; font-family: inherit; }
+    .waitlist-btn:hover:not(:disabled) { background: var(--primary-dark); }
+    .waitlist-btn:disabled { opacity: 0.7; cursor: not-allowed; }
+    .waitlist-privacy { font-size: 0.8rem; color: var(--muted); max-width: 480px; margin: 0 auto; }
+    .waitlist-success { display: none; background: #dcfce7; border: 1px solid #86efac; border-radius: 12px; padding: 2rem; max-width: 480px; margin: 0 auto; }
+    .waitlist-success h3 { color: #166534; font-size: 1.15rem; margin-bottom: 0.4rem; }
+    .waitlist-success p { color: #15803d; font-size: 0.9rem; }
+
     @media (max-width: 640px) {
       nav { padding: 1rem; }
       .hero-stats { gap: 2rem; }
@@ -242,6 +258,33 @@
         </div>
       </div>
       <p class="beta-feedback">Beta user? <a href="https://forms.gle/couponsnap-beta-feedback" target="_blank" rel="noopener">Share your feedback</a> and shape the final release.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WAITLIST -->
+<section id="waitlist" class="waitlist-section">
+  <div class="waitlist-inner">
+    <div class="waitlist-count">🔔 Join the waitlist — Chrome Store launching soon</div>
+    <h2 class="section-title" style="font-size: clamp(1.5rem, 3.5vw, 2.2rem); margin-bottom: 0.75rem;">Be First When CouponSnap Goes Live</h2>
+    <p class="section-subtitle" style="margin-bottom: 2rem;">Get notified the moment CouponSnap is available on the Chrome Store — plus an exclusive early-bird savings guide, free.</p>
+
+    <form id="mc-waitlist-form" novalidate>
+      <div class="waitlist-form-row">
+        <input class="waitlist-input" type="email" id="mc-email" name="EMAIL" placeholder="Enter your email address" required autocomplete="email" />
+        <!-- Mailchimp honeypot bot protection -->
+        <div style="position:absolute;left:-5000px;" aria-hidden="true">
+          <input type="text" name="b_AUDIENCE_U_FORM_ID" tabindex="-1" value="" />
+        </div>
+        <button class="waitlist-btn" type="submit" id="mc-submit-btn">🔔 Notify Me</button>
+      </div>
+      <p class="waitlist-privacy">🔒 No spam, ever. Unsubscribe with one click. We never sell your email.</p>
+    </form>
+
+    <div class="waitlist-success" id="mc-success">
+      <div style="font-size:2.5rem; margin-bottom:0.5rem;">🎉</div>
+      <h3>You're on the list!</h3>
+      <p>Thanks! We'll notify you the moment CouponSnap hits the Chrome Store.</p>
     </div>
   </div>
 </section>
@@ -454,5 +497,74 @@
   <p style="margin-top:0.5rem;font-size:0.8rem;">CouponSnap earns affiliate commissions when you make a purchase through our links — at no extra cost to you. We never sell your personal data.</p>
 </footer>
 
+<script>
+  // ── MAILCHIMP WAITLIST FORM ──────────────────────────────────────────────
+  // TODO (Atlas): Replace MAILCHIMP_JSONP_URL below with your actual Mailchimp
+  // post-json endpoint. Format:
+  //   https://YOURLIST.us1.list-manage.com/subscribe/post-json?u=AUDIENCE_ID&id=FORM_ID&c=?
+  // Get it from: Mailchimp → Audience → Signup forms → Embedded forms → copy action URL,
+  // then change "/post?" to "/post-json?" and append "&c=?"
+  var MC_URL = 'MAILCHIMP_JSONP_URL';
+
+  (function () {
+    var form = document.getElementById('mc-waitlist-form');
+    var emailInput = document.getElementById('mc-email');
+    var submitBtn = document.getElementById('mc-submit-btn');
+    var successDiv = document.getElementById('mc-success');
+    if (!form) return;
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var email = emailInput.value.trim();
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        emailInput.classList.add('error');
+        emailInput.focus();
+        return;
+      }
+      emailInput.classList.remove('error');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Subscribing…';
+
+      // Use JSONP so the form submits without a page reload / new tab
+      var cbName = 'mc_cb_' + Date.now();
+      var url = MC_URL.replace('&c=?', '&c=' + cbName) + '&EMAIL=' + encodeURIComponent(email);
+
+      window[cbName] = function (data) {
+        delete window[cbName];
+        if (script.parentNode) script.parentNode.removeChild(script);
+        if (data.result === 'success' || (data.msg && data.msg.indexOf('already subscribed') > -1)) {
+          form.style.display = 'none';
+          successDiv.style.display = 'block';
+          if (typeof gtag === 'function') gtag('event', 'waitlist_signup', { event_category: 'conversion' });
+        } else {
+          submitBtn.disabled = false;
+          submitBtn.textContent = '🔔 Notify Me';
+          emailInput.classList.add('error');
+          emailInput.placeholder = 'Something went wrong — try again';
+          emailInput.value = '';
+        }
+      };
+
+      var script = document.createElement('script');
+      script.src = url;
+      document.body.appendChild(script);
+
+      // 8-second timeout fallback — show success optimistically
+      setTimeout(function () {
+        if (window[cbName]) {
+          delete window[cbName];
+          if (script.parentNode) script.parentNode.removeChild(script);
+          form.style.display = 'none';
+          successDiv.style.display = 'block';
+        }
+      }, 8000);
+    });
+
+    // Clear error state on re-type
+    emailInput.addEventListener('input', function () {
+      emailInput.classList.remove('error');
+    });
+  })();
+</script>
 </body>
 </html>
