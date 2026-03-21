@@ -1,0 +1,23 @@
+{
+  "experiment_id": "exp-002",
+  "created": "2026-03-21",
+  "status": "queued",
+  "hypothesis": "First-person CTA ('Get My Free Extension') will outperform current third-person CTA, because first-person possessive language creates psychological ownership before the action is taken.",
+  "variables_changed": ["cta_primary"],
+  "changes": {
+    "cta_primary": "Get My Free Extension"
+  },
+  "rationale": {
+    "cta_primary": "Multiple A/B test case studies (Unbounce, HubSpot) show first-person CTA copy ('My' vs 'Your') lifts clicks by 10-20%. 'Get' is more action-oriented than 'Add'. Removing 'to Chrome' reduces cognitive load."
+  },
+  "predicted_lift": "+12% CTA click rate",
+  "priority": 2,
+  "tags": ["cta", "first-person", "language"],
+  "metrics": {
+    "sessions": null,
+    "cta_clicks": null,
+    "cta_click_rate": null,
+    "result": null,
+    "evaluated_at": null
+  }
+}

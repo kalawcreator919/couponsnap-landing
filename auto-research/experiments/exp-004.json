@@ -1,0 +1,25 @@
+{
+  "experiment_id": "exp-004",
+  "created": "2026-03-21",
+  "status": "queued",
+  "hypothesis": "A curiosity-gap headline combined with savings-focused stats will outperform the current setup by triggering FOMO and anchoring value with a concrete dollar amount.",
+  "variables_changed": ["headline", "social_proof_stats"],
+  "changes": {
+    "headline": "The Chrome Extension PayPal Doesn't Want You to Know About",
+    "social_proof_stats": ["Avg. $127 Saved Per Year", "1,000+ Stores Supported", "100% Free & Private"]
+  },
+  "rationale": {
+    "headline": "Curiosity gap + implied controversy. Positions CouponSnap as the scrappy underdog vs PayPal (billion-dollar corporation). Tests whether provocation outperforms straightforward benefit. Risk: may feel clickbait-y — monitoring bounce rate.",
+    "social_proof_stats": "Replacing '$0 Cost to You, Ever' with a concrete savings figure ($127/year) gives visitors a reason to care. Dollar amounts are more motivating than cost-avoidance framing."
+  },
+  "predicted_lift": "+10% CTA click rate",
+  "priority": 4,
+  "tags": ["curiosity", "anti-honey", "stats", "value-anchor"],
+  "metrics": {
+    "sessions": null,
+    "cta_clicks": null,
+    "cta_click_rate": null,
+    "result": null,
+    "evaluated_at": null
+  }
+}

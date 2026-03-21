@@ -1,0 +1,23 @@
+{
+  "experiment_id": "exp-008",
+  "created": "2026-03-21",
+  "status": "queued",
+  "hypothesis": "Switching the badge to a low-friction guarantee ('remove in 10 seconds') will outperform the current privacy message by reducing installation anxiety for hesitant visitors.",
+  "variables_changed": ["hero_badge"],
+  "changes": {
+    "hero_badge": "✅ Free forever. No account needed. Uninstall in 10 seconds."
+  },
+  "rationale": {
+    "hero_badge": "Addresses installation anxiety — the #1 barrier to Chrome extension adoption. 'No account needed' removes data collection fears. 'Uninstall in 10 seconds' reduces perceived lock-in. Tests whether commitment-reduction messaging outperforms the privacy differentiator. This is the 'remove all barriers' hypothesis."
+  },
+  "predicted_lift": "+6% CTA click rate (especially first-time extension users)",
+  "priority": 8,
+  "tags": ["low-friction", "anti-anxiety", "commitment-reduction", "badge"],
+  "metrics": {
+    "sessions": null,
+    "cta_clicks": null,
+    "cta_click_rate": null,
+    "result": null,
+    "evaluated_at": null
+  }
+}

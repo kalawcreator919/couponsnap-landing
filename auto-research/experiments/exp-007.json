@@ -1,0 +1,25 @@
+{
+  "experiment_id": "exp-007",
+  "created": "2026-03-21",
+  "status": "queued",
+  "hypothesis": "A description that leads with the data privacy story + stats anchored to savings will outperform current product-focused description, because the emotional story creates a stronger reason to switch.",
+  "variables_changed": ["hero_description", "social_proof_stats"],
+  "changes": {
+    "hero_description": "After PayPal bought Honey for $4B, they started selling your shopping data. CouponSnap does the same job — finds and applies coupon codes at 1,000+ stores — without the data selling.",
+    "social_proof_stats": ["Zero Data Sold. Ever.", "1,000+ Stores Supported", "100% Free Forever"]
+  },
+  "rationale": {
+    "hero_description": "Narrative-driven description. Tells the story of why CouponSnap exists in 2 sentences. The $4B reference anchors the scale of Honey's commercial incentive to sell data. Risk: longer than current — monitor bounce rate and scroll depth.",
+    "social_proof_stats": "Leads with 'Zero Data Sold. Ever.' as the primary differentiator stat. Tests whether making privacy the #1 metric (rather than stores or price) increases conversion for privacy-motivated visitors."
+  },
+  "predicted_lift": "+9% CTA click rate (high-intent privacy-conscious visitors)",
+  "priority": 7,
+  "tags": ["narrative", "privacy", "story", "anti-honey", "stats"],
+  "metrics": {
+    "sessions": null,
+    "cta_clicks": null,
+    "cta_click_rate": null,
+    "result": null,
+    "evaluated_at": null
+  }
+}

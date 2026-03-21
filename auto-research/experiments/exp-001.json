@@ -1,0 +1,25 @@
+{
+  "experiment_id": "exp-001",
+  "created": "2026-03-21",
+  "status": "queued",
+  "hypothesis": "Loss aversion framing in the headline + confrontational anti-Honey badge will outperform current benefit-driven headline, because fear of losing money is 2x more motivating than gaining money (Kahneman), and the Honey privacy scandal is fresh in shoppers' minds.",
+  "variables_changed": ["headline", "hero_badge"],
+  "changes": {
+    "headline": "Stop Losing Money Every Time You Shop Online",
+    "hero_badge": "⚠️ PayPal's Honey sells your data. CouponSnap never will."
+  },
+  "rationale": {
+    "headline": "Loss aversion framing — 'stop losing' triggers stronger emotion than 'save money'. Pain-point angle tests whether negative framing outperforms current benefit-driven copy.",
+    "hero_badge": "Confrontational Honey callout. More aggressive than current gentle privacy message. Tests whether naming the competitor directly increases urgency to switch."
+  },
+  "predicted_lift": "+8% CTA click rate",
+  "priority": 1,
+  "tags": ["loss-aversion", "anti-honey", "headline", "trust"],
+  "metrics": {
+    "sessions": null,
+    "cta_clicks": null,
+    "cta_click_rate": null,
+    "result": null,
+    "evaluated_at": null
+  }
+}

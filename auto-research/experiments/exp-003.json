@@ -1,0 +1,23 @@
+{
+  "experiment_id": "exp-003",
+  "created": "2026-03-21",
+  "status": "queued",
+  "hypothesis": "A shorter, punchier hero description focused on speed and outcome will outperform the current longer description, because reducing cognitive load above the fold increases conversion.",
+  "variables_changed": ["hero_description"],
+  "changes": {
+    "hero_description": "Instant coupon codes at Amazon, Walmart, Target & 1,000+ stores. Free. Private. Automatic."
+  },
+  "rationale": {
+    "hero_description": "Current description is 30 words. This challenger is 14 words. Tests whether radical brevity — three adjectives as a rhythm ('Free. Private. Automatic.') — reduces friction and increases scannability for mobile users. Keeps the three key stores named for recognition."
+  },
+  "predicted_lift": "+6% CTA click rate (especially mobile)",
+  "priority": 3,
+  "tags": ["description", "brevity", "mobile", "clarity"],
+  "metrics": {
+    "sessions": null,
+    "cta_clicks": null,
+    "cta_click_rate": null,
+    "result": null,
+    "evaluated_at": null
+  }
+}

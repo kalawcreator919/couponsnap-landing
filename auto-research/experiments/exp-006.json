@@ -1,0 +1,23 @@
+{
+  "experiment_id": "exp-006",
+  "created": "2026-03-21",
+  "status": "queued",
+  "hypothesis": "A question-format headline addressing the visitor's existing frustration will outperform statement headlines by triggering self-identification and increasing relevance.",
+  "variables_changed": ["headline"],
+  "changes": {
+    "headline": "Still Paying Full Price Online? CouponSnap Fixes That."
+  },
+  "rationale": {
+    "headline": "Rhetorical question format. 'Still paying full price?' triggers self-identification for anyone who has ever missed a discount. 'CouponSnap Fixes That' is a confident, direct response. Two-part structure creates a mini-story in the headline. Tests question vs statement format."
+  },
+  "predicted_lift": "+5% CTA click rate",
+  "priority": 6,
+  "tags": ["headline", "question-format", "self-identification", "pain-point"],
+  "metrics": {
+    "sessions": null,
+    "cta_clicks": null,
+    "cta_click_rate": null,
+    "result": null,
+    "evaluated_at": null
+  }
+}

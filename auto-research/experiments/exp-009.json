@@ -1,0 +1,25 @@
+{
+  "experiment_id": "exp-009",
+  "created": "2026-03-21",
+  "status": "queued",
+  "hypothesis": "A specificity-driven headline about Amazon (the #1 shopping destination) combined with a value-anchored CTA will outperform generic savings messaging by targeting the majority use case.",
+  "variables_changed": ["headline", "cta_primary"],
+  "changes": {
+    "headline": "Never Pay Full Price on Amazon Again (Or 1,000+ Other Stores)",
+    "cta_primary": "Add to Chrome — Save on Your Next Order"
+  },
+  "rationale": {
+    "headline": "Leads with Amazon — the highest-traffic shopping site for most users. Parenthetical addition signals breadth without losing the primary hook. 'Never pay full price again' is a strong, aspirational promise. Tests store-specific targeting vs generic 'save money' framing.",
+    "cta_primary": "'Save on Your Next Order' is action-oriented and immediate. 'Your Next Order' implies the visitor will shop soon — meeting them where they are. Tests outcome-in-CTA vs feature-in-CTA ('Add to Chrome')."
+  },
+  "predicted_lift": "+11% CTA click rate",
+  "priority": 9,
+  "tags": ["amazon", "specificity", "cta-outcome", "headline"],
+  "metrics": {
+    "sessions": null,
+    "cta_clicks": null,
+    "cta_click_rate": null,
+    "result": null,
+    "evaluated_at": null
+  }
+}

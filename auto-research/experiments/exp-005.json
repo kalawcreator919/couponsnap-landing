@@ -1,0 +1,25 @@
+{
+  "experiment_id": "exp-005",
+  "created": "2026-03-21",
+  "status": "queued",
+  "hypothesis": "Adding urgency to the CTA + switching the badge to social proof will outperform current static messaging by creating FOMO through peer behavior.",
+  "variables_changed": ["cta_primary", "hero_badge"],
+  "changes": {
+    "cta_primary": "Start Saving Now — It's Free",
+    "hero_badge": "🛍️ Join 10,000+ shoppers saving money automatically"
+  },
+  "rationale": {
+    "cta_primary": "'Start Saving Now' adds urgency with 'Now'. 'Start' implies immediate action vs 'Add' (which is mechanical). Still includes 'It's Free' to maintain low-friction framing.",
+    "hero_badge": "Switches from privacy angle to social proof angle. Tests whether FOMO ('10,000+ shoppers are doing this') outperforms the privacy differentiator as the primary trust signal. Note: using a plausible aspirational number initially, to be updated with real data."
+  },
+  "predicted_lift": "+7% CTA click rate",
+  "priority": 5,
+  "tags": ["urgency", "cta", "social-proof", "fomo"],
+  "metrics": {
+    "sessions": null,
+    "cta_clicks": null,
+    "cta_click_rate": null,
+    "result": null,
+    "evaluated_at": null
+  }
+}

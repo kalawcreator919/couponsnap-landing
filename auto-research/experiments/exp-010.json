@@ -1,0 +1,25 @@
+{
+  "experiment_id": "exp-010",
+  "created": "2026-03-21",
+  "status": "queued",
+  "hypothesis": "A description that leads with the time-saving benefit (not money) combined with a 'try it free' CTA will outperform current copy by appealing to busy shoppers who value convenience over savings.",
+  "variables_changed": ["hero_description", "cta_primary"],
+  "changes": {
+    "hero_description": "Skip the coupon hunting. CouponSnap checks 1,000+ stores automatically at checkout — in under 3 seconds. Same savings, zero effort. Unlike Honey, we never touch your data.",
+    "cta_primary": "Try CouponSnap Free"
+  },
+  "rationale": {
+    "hero_description": "'Skip the coupon hunting' opens with eliminating effort — appeals to convenience-motivated users, not just deal-hunters. '3 seconds' adds specificity to the speed claim. 'Same savings, zero effort' is a memorable two-part value prop. Ends with privacy claim to maintain differentiator.",
+    "cta_primary": "'Try' is lower-commitment than 'Add' or 'Get'. 'CouponSnap Free' = brand + pricing in 2 words. Tests whether softer trial language ('try') vs commitment language ('get') affects click rate."
+  },
+  "predicted_lift": "+7% CTA click rate (convenience-motivated segment)",
+  "priority": 10,
+  "tags": ["convenience", "time-saving", "low-commitment", "cta", "description"],
+  "metrics": {
+    "sessions": null,
+    "cta_clicks": null,
+    "cta_click_rate": null,
+    "result": null,
+    "evaluated_at": null
+  }
+}
