@@ -165,6 +165,21 @@
     /* ADSENSE */
     .adsense-placeholder { background: var(--bg); border: 1px dashed var(--border); border-radius: 8px; padding: 1.5rem; text-align: center; color: var(--muted); font-size: 0.85rem; margin: 2rem auto; max-width: 728px; }
 
+    /* BETA BANNER */
+    .beta-banner { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border: 2px solid #f59e0b; border-radius: 12px; padding: 2rem; max-width: 800px; margin: 0 auto; text-align: center; }
+    .beta-badge { display: inline-block; background: #f59e0b; color: white; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem; }
+    .beta-banner h3 { font-size: 1.4rem; font-weight: 800; color: #92400e; margin-bottom: 0.5rem; }
+    .beta-banner p { color: #78350f; margin-bottom: 1.5rem; font-size: 0.95rem; }
+    .btn-beta { background: #f59e0b; color: white; padding: 0.85rem 2rem; border-radius: 8px; font-weight: 700; font-size: 1rem; display: inline-flex; align-items: center; gap: 0.5rem; transition: background 0.2s; }
+    .btn-beta:hover { background: #d97706; text-decoration: none; }
+    .beta-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-top: 1.5rem; text-align: left; }
+    .beta-step { background: white; border-radius: 8px; padding: 1rem; }
+    .beta-step-num { width: 24px; height: 24px; background: #f59e0b; color: white; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .beta-step p { font-size: 0.85rem; color: #78350f; margin: 0; }
+    .beta-step code { background: #fef3c7; padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.8rem; }
+    .beta-feedback { margin-top: 1rem; font-size: 0.85rem; color: #92400e; }
+    .beta-feedback a { color: #92400e; font-weight: 600; text-decoration: underline; }
+
     @media (max-width: 640px) {
       nav { padding: 1rem; }
       .hero-stats { gap: 2rem; }
@@ -195,6 +210,39 @@
     <div class="stat"><div class="stat-num">1,000+</div><div class="stat-label">Stores & Deals</div></div>
     <div class="stat"><div class="stat-num">$0</div><div class="stat-label">Cost to You, Ever</div></div>
     <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Privacy Preserved</div></div>
+  </div>
+</section>
+
+<!-- BETA DOWNLOAD -->
+<section id="beta-download" style="padding: 3rem 2rem;">
+  <div class="container">
+    <div class="beta-banner">
+      <div class="beta-badge">⚡ Beta — Available Now</div>
+      <h3>Try CouponSnap Before It Hits the Chrome Store</h3>
+      <p>Chrome Web Store review is in progress. Download the beta now and start saving immediately — takes under 2 minutes to install.</p>
+      <a class="btn-beta" href="https://github.com/kennethlaw325/couponsnap/releases/download/v0.2.0/couponsnap-v0.2.0.zip" onclick="gtag('event','beta_download',{event_category:'conversion'})">
+        ⬇️ Download Beta v0.2.0 (Free)
+      </a>
+      <div class="beta-steps">
+        <div class="beta-step">
+          <div class="beta-step-num">1</div>
+          <p>Download &amp; <strong>unzip</strong> the file above</p>
+        </div>
+        <div class="beta-step">
+          <div class="beta-step-num">2</div>
+          <p>Open Chrome → <code>chrome://extensions</code></p>
+        </div>
+        <div class="beta-step">
+          <div class="beta-step-num">3</div>
+          <p>Enable <strong>Developer mode</strong> (top-right toggle)</p>
+        </div>
+        <div class="beta-step">
+          <div class="beta-step-num">4</div>
+          <p>Click <strong>Load unpacked</strong> → select the folder</p>
+        </div>
+      </div>
+      <p class="beta-feedback">Beta user? <a href="https://forms.gle/couponsnap-beta-feedback" target="_blank" rel="noopener">Share your feedback</a> and shape the final release.</p>
+    </div>
   </div>
 </section>
 
