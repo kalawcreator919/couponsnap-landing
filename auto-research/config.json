@@ -1,0 +1,66 @@
+{
+  "project": "CouponSnap Landing Page CRO",
+  "version": "1.0.0",
+  "metric": {
+    "name": "cta_click_rate",
+    "description": "Percentage of visitors who click 'Add to Chrome' CTA",
+    "source": "google_analytics",
+    "ga4_property_id": "REPLACE_WITH_GA4_PROPERTY_ID",
+    "ga4_measurement_id": "G-BRZEPQKZSY",
+    "event_name": "cta_click",
+    "baseline_period_days": 1,
+    "minimum_sessions": 50
+  },
+  "variables": [
+    {
+      "id": "headline",
+      "description": "Main H1 headline text",
+      "selector": "h1",
+      "current": "Save Money *Automatically* While You Shop Online"
+    },
+    {
+      "id": "hero_badge",
+      "description": "Trust badge above headline",
+      "selector": ".hero-badge",
+      "current": "We NEVER sell your data — unlike Honey"
+    },
+    {
+      "id": "cta_primary",
+      "description": "Primary CTA button text",
+      "selector": ".btn-primary",
+      "current": "Add to Chrome — It's Free"
+    },
+    {
+      "id": "cta_footer",
+      "description": "Footer CTA button text",
+      "selector": ".btn-white",
+      "current": "Add CouponSnap to Chrome — Free"
+    },
+    {
+      "id": "hero_description",
+      "description": "Hero subtitle/description text",
+      "selector": ".hero p",
+      "current": "CouponSnap finds and applies the best coupon codes at checkout — instantly and for free. Works at Amazon, Walmart, Target & 1,000+ stores."
+    },
+    {
+      "id": "social_proof_stats",
+      "description": "Three stat numbers in hero section",
+      "selector": ".hero-stats",
+      "current": ["1,000+ Stores Supported", "$0 Cost to You, Ever", "100% Privacy Preserved"]
+    }
+  ],
+  "constraints": [
+    "Keep the page truthful — do not exaggerate claims",
+    "Maintain privacy-first messaging (core differentiator vs Honey)",
+    "CTA must link to Chrome Web Store",
+    "Do not change store logos, blog content, or footer legal text",
+    "Keep page load fast — no external JS libraries",
+    "Preserve responsive design",
+    "Maximum 2 variables changed per experiment"
+  ],
+  "schedule": {
+    "loop_interval": "daily",
+    "cron": "0 9 * * *",
+    "min_data_hours": 24
+  }
+}

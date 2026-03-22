@@ -1,0 +1,23 @@
+{
+  "experiment_id": "baseline-v1",
+  "created": "2026-03-20",
+  "type": "baseline",
+  "changes": {},
+  "page_elements": {
+    "headline": "Save Money <em>Automatically</em><br>While You Shop Online",
+    "hero_badge": "🔒 We NEVER sell your data — unlike Honey",
+    "cta_primary": "Add to Chrome — It's Free",
+    "cta_footer": "Add CouponSnap to Chrome — Free",
+    "hero_description": "CouponSnap finds and applies the best coupon codes at checkout — instantly and for free. Works at Amazon, Walmart, Target & 1,000+ stores.",
+    "stats": ["1,000+ Stores Supported", "$0 Cost to You, Ever", "100% Privacy Preserved"]
+  },
+  "metrics": {
+    "sessions": null,
+    "cta_clicks": null,
+    "cta_click_rate": null,
+    "avg_session_duration": null,
+    "bounce_rate": null
+  },
+  "status": "active",
+  "notes": "Original landing page design by Spark agent"
+}

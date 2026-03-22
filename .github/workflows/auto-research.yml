@@ -1,0 +1,40 @@
+name: CouponSnap Auto Research
+
+on:
+  schedule:
+    # Run daily at 9:00 AM UTC
+    - cron: '0 9 * * *'
+  workflow_dispatch:  # Allow manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  experiment:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          pip install google-analytics-data
+
+      - name: Run Auto Research Pipeline
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GA4_SERVICE_ACCOUNT_KEY }}
+        run: |
+          cd auto-research
+          python orchestrator.py
+
+      - name: Push changes
+        run: |
+          git config user.name "CouponSnap Auto Research"
+          git config user.email "auto-research@couponsnap.app"
+          git add -A
+          git diff --staged --quiet || git commit -m "auto-research: experiment $(date +%Y%m%d-%H%M)"
+          git push
