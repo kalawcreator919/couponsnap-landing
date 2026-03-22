@@ -27,6 +27,9 @@ jobs:
       - name: Run Auto Research Pipeline
         env:
           GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GA4_SERVICE_ACCOUNT_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GA4_PROPERTY_ID: ${{ secrets.GA4_PROPERTY_ID }}
+          GA4_CREDENTIALS: ${{ secrets.GA4_CREDENTIALS }}
         run: |
           cd auto-research
           python orchestrator.py
@@ -36,5 +39,7 @@ jobs:
           git config user.name "CouponSnap Auto Research"
           git config user.email "auto-research@couponsnap.app"
           git add -A
-          git diff --staged --quiet || git commit -m "auto-research: experiment $(date +%Y%m%d-%H%M)"
+          git diff --staged --quiet || git commit -m "auto-research: experiment $(date +%Y%m%d-%H%M)
+
+Co-Authored-By: Paperclip <noreply@paperclip.ing>"
           git push
