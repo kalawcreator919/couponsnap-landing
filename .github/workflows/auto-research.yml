@@ -2,7 +2,7 @@ name: CouponSnap Auto Research
 
 on:
   schedule:
-    # Run daily at 9:00 AM UTC
+    # Run daily at 9:00 AM UTC (5:00 PM HKT)
     - cron: '0 9 * * *'
   workflow_dispatch:  # Allow manual trigger
 
@@ -27,6 +27,8 @@ jobs:
       - name: Run Auto Research Pipeline
         env:
           GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GA4_SERVICE_ACCOUNT_KEY }}
+          GA4_PROPERTY_ID: ${{ secrets.GA4_PROPERTY_ID }}
+          GA4_CREDENTIALS: ${{ secrets.GA4_CREDENTIALS }}
         run: |
           cd auto-research
           python orchestrator.py
